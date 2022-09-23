@@ -15,6 +15,7 @@ print('\nInitializing your personal settings...')
     
 Settings.init_settings()
 crossplatform.clear()
+tm.sleep(Settings.settings['delay'])
 
 
 def badfunction(k):
@@ -104,7 +105,7 @@ def show(tm):
     print()
     print('此功能正在施工中')
     print()
-    tm.sleep(0.8)
+    tm.sleep(Settings.settings['delay'])
 new_map_for_developers = [[]
 ,[\
 [1,1,1,1,1,1,1,1,1,1,1],\
@@ -151,9 +152,9 @@ def playhf(tm):
     print('stages:%d'%(len(hfms)))
     for mp in hfms:
         stage = hfms.index(mp)
-        tm.sleep(1)
+        tm.sleep(Settings.settings['delay'])
         crossplatform.clear()
-        tm.sleep(1)
+        tm.sleep(Settings.settings['delay'])
         player = players[stage]
         box = boxes[stage]
         targ = targs[stage]
@@ -311,13 +312,11 @@ True  是
 False  否
 abs()  绝对值''')
             try:
-                q = input('请输入算式（不带=）：')
-                q_ev = int(q)
-                print('答案是：',q_ev)
+                print('答案是：', eval(input('请输入算式（不带=）：')))
             except ZeroDivisionError:
                 print('算式中含有除以0，无法计算')
             except SyntaxError:
-                    print('无法计算')
+                print('无法计算')
         elif m == '02':
             while True:
                 inp = input('''1.输出一到几以内的质数
@@ -523,7 +522,7 @@ abs()  绝对值''')
             q = int(input('一共要多少道题？'))
             for cd in [3,2,1]:
                 print(cd)
-                tm.sleep(1)
+                tm.sleep(Settings.settings['delay'])
             for n in range(1,q+1):
                 a = random.randint(1,100)
                 b = random.randint(1,100)
@@ -546,7 +545,7 @@ abs()  绝对值''')
             q = int(input('一共要多少道题？'))
             for cd in [3,2,1]:
                 print(cd)
-                tm.sleep(1)
+                tm.sleep(Settings.settings['delay'])
             for n in range(1,q+1):
                 kwc = random.choice(keyword.kwlist)
                 print(kwc,end=' 请打出相同的单词:')
@@ -805,7 +804,7 @@ ax² + bx + c = 0''')
                         s2 = input('走不到，请重新输入：')
                     s = s2
                     t.goto(lsb.index(s2[1:])*20+10,lsa.index(s2[0])*20+10)
-                    tm.sleep(0.3)
+                    tm.sleep(Settings.settings['delay'])
                     for i in keypoint:
                         if ok(s,i):
                             t.color('red')
@@ -846,7 +845,7 @@ ax² + bx + c = 0''')
                         s2 = input('走不到，请重新输入：')
                     s = s2
                     t.goto(lsb.index(s2[1:])*20+10,lsa.index(s2[0])*20+10)
-                    tm.sleep(0.3)
+                    tm.sleep(Settings.settings['delay'])
                     if s == 'A11':
                         print('你赢了！！！')
                         break
@@ -986,7 +985,7 @@ ax² + bx + c = 0''')
         elif m == '23':
             if crossplatform.nowin:
                 print('声音功能在非Windows系统上不可用。')
-                tm.sleep(0.8)
+                tm.sleep(Settings.settings['delay'])
                 continue
             print("键盘上q-u,z-k分别对应低音1到高音1,键盘上的2,3,5,6,7,s,d,g,h,j分别对应低音1到高音1间的所有升降音,空格代表空拍")
             a = ['q','2','w','3','e','random','5','t','6','y','7','u','z','s','x','d','c','v','g','b','h','n','j','m','k']
@@ -1071,7 +1070,7 @@ ax² + bx + c = 0''')
                         s2 = input('走不到，请重新输入：')
                     s = s2
                     t.goto(lsb.index(s2[1:])*20+10,lsa.index(s2[0])*20+10)
-                    tm.sleep(0.3)
+                    tm.sleep(Settings.settings['delay'])
                     for i in keypoint:
                         if ok2(s,i):
                             t.color('red')
@@ -1112,7 +1111,7 @@ ax² + bx + c = 0''')
                         s2 = input('走不到，请重新输入：')
                     s = s2
                     t.goto(lsb.index(s2[1:])*20+10,lsa.index(s2[0])*20+10)
-                    tm.sleep(0.3)
+                    tm.sleep(Settings.settings['delay'])
                     if s == 'A13':
                         print('你赢了！！！')
                         break
@@ -1231,7 +1230,7 @@ ax² + bx + c = 0''')
                 while t > 0:
                     print(t,'s')
                     t -= 1
-                    tm.sleep(1)
+                    tm.sleep(Settings.settings['delay'])
         elif m == '29':
             x = input('电脑显示一个"[回车]"后请立即按回车，有5~10s的准备时间，现在按回车开始:')
             tm.sleep(random.randint(5,10))
@@ -1423,7 +1422,7 @@ ax² + bx + c = 0''')
                     print(i,end='')
                 else:
                     print()
-                    tm.sleep(1)
+                    tm.sleep(Settings.settings['delay'])
         elif m == '37':
             s = input('请输入网址:')
             webbrowser.open(s)
@@ -1648,13 +1647,13 @@ ax² + bx + c = 0''')
                     data[2] += 12
             print('最终分:',score)
             print('然而...')
-            tm.sleep(0.8)
+            tm.sleep(Settings.settings['delay'])
             print('你的行为遭到了同学们的批评、厌恶...')
-            tm.sleep(0.8)
+            tm.sleep(Settings.settings['delay'])
             print('2022年5月13日...')
-            tm.sleep(0.8)
+            tm.sleep(Settings.settings['delay'])
             print('a97写下了这段代码...')
-            tm.sleep(0.8)
+            tm.sleep(Settings.settings['delay'])
             print('...')
         elif m == '43':
             Settings.settings = Settings.ask_settings()
@@ -1966,7 +1965,7 @@ ax² + bx + c = 0''')
             print('好像发生了一些事情……')
         elif m == '114514':
             print('程序发生了意外的错误！')
-            tm.sleep(2)
+            tm.sleep(Settings.settings['delay'])
             while True:
                 print('太臭了把程序臭死了',end='')
         else:
